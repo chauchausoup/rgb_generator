@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../image-edit"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "color-generator"
+	}
+}

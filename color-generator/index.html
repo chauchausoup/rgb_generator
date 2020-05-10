@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="topic">
+      <h2>Color Generator</h2>
+    </div>
+    <div class="container">
+      <div class="select">
+        <div class="red-class">
+          <label for="red" class="text-red">Red:</label>
+          <input
+            type="range"
+            name="red"
+            id="red"
+            min="0"
+            max="255"
+            value="100"
+          />
+          <div class="red-box"></div>
+        </div>
+
+        <div class="green-class">
+          <label for="green" class="text-green">Green:</label>
+          <input
+            type="range"
+            name="green"
+            id="green"
+            min="0"
+            max="255"
+            value="100"
+          />
+          <div class="green-box"></div>
+        </div>
+
+        <div class="blue-class">
+          <label for="blue" class="text-blue">Blue:</label>
+          <input
+            type="range"
+            name="blue"
+            id="blue"
+            min="0"
+            max="255"
+            value="100"
+          />
+          <div class="blue-box"></div>
+        </div>
+      </div>
+      <div class="space">
+        <div class="value">
+          <h3>rgb</h3>
+          <h2>(</h2>
+          <h2 id="r">144</h2>
+          <h2>,</h2>
+          <!-- hex from red comes here -->
+          <h2 id="g">144</h2>
+          <h2>,</h2>
+          <h2 id="b">144</h2>
+          <h2>)</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>ChauChauSoup &copy</p>
+      <p>May 2020</p>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll(".select input");
+
+      inputs.forEach((input) =>
+        input.addEventListener("mousemove", handleUpdate)
+      );
+
+      function handleUpdate() {
+        if (this.name === "red") {
+          document.querySelector("#r").innerHTML = this.value;
+          document.documentElement.style.setProperty(
+            `--${this.name}`,
+            this.value
+          );
+        }
+        if (this.name === "green") {
+          document.querySelector("#g").innerHTML = this.value;
+          document.documentElement.style.setProperty(
+            `--${this.name}`,
+            this.value
+          );
+        }
+        if (this.name === "blue") {
+          document.querySelector("#b").innerHTML = this.value;
+          document.documentElement.style.setProperty(
+            `--${this.name}`,
+            this.value
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
